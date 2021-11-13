@@ -1,0 +1,32 @@
+<section class="todoapp">
+  <header class="header">
+    <h1>Todo</h1>
+    <input class="new-todo" placeholder="What needs to be done?" autofocus/>
+  </header>
+  <section class="main">
+    <ul class="todo-list">
+      <li *ngFor="let todo of todos" [ngClass]="{completed: todo.isDone}">
+        <div class="view">
+          <input class="toggle" type="checkbox" [checked]="todo.isDone"/>
+          <label>{{todo.title}}</label>
+          <button class="destroy"></button>
+        </div>
+        <input class="edit" value="{{todo.title}}"/>
+      </li>
+    </ul>
+  </section>
+  <footer class="footer">
+    <span class="todo-count"><strong>{{activeTasks}}</strong>  item left</span>
+    <ul class="filters">
+      <li>
+        <a class="selected" href="#/">All</a>
+      </li>
+      <li>
+        <a  href="#/active">Active</a>
+      </li>
+      <li>
+        <a  href="#/completed">Completed</a>
+      </li>
+    </ul>
+  </footer>
+</section>
